@@ -2,7 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -115,7 +114,8 @@ body {
 }
 
 .results-carousel .item {
-  margin: 5px;
+  margin-right: 20%;
+  margin-left: 20%;
   overflow: hidden;
   padding: 20px;
   font-size: 0;

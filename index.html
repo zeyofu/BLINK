@@ -195,11 +195,12 @@
 <!-- End teaser video -->
 
 <!-- BLINK Comparison -->
-<section class="section hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-sixths">
-        <h2 class="title is-3">BLINK Benchmark -- Charateristic and Statistics of BLINK ?</h2>
+        <h2 class="title is-3">BLINK Benchmark -- Charateristic and Statistics of BLINK?</h2>
+        <!-- <h2 class="title is-3">BLINK Benchmark -- Unique Features of BLINK?</h2> -->
         <h2 class="content has-text-justified">
         
         <ul>
@@ -240,7 +241,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce <b>BLINK</b>, a new benchmark for multimodal language models (LLMs) that focuses on core visual perception abilities not found in other evaluations. Most of the <b>BLINK</b> tasks can be solved by humans “within a blink” (e.g., <i>relative depth estimation, visual correspondence, forensics detection, and multi-view reasoning</i>). However, we find these perception-demanding tasks cast significant challenges for current multimodal LLMs because they resist mediation through natural language. <b>BLINK</b> reformats 14 classic computer vision tasks into 3,978 multiple-choice questions, paired with single or multiple images and visual prompting. While humans get 95.70% accuracy on average, <b>BLINK</b> is surprisingly challenging for existing multimodal LLMs: even the best-performing GPT-4V and Gemini achieve accuracies of 51.32% and 45.46%, only 13.23% and 7.47% higher than random guessing, indicating that such perception abilities have not “emerged” yet in recent multimodal LLMs. Our analysis also highlights that specialist CV models could solve these problems much better, suggesting potential pathways for future improvements. We believe <b>BLINK</b> will stimulate the community to help multimodal LLMs catch up with human-level visual perception.
+            We introduce <b>BLINK</b>, a new benchmark for multimodal language models (LLMs) that focuses on core visual perception abilities not found in other evaluations. Most of the <b>BLINK</b> tasks can be solved by humans “within a blink” (e.g., <i>relative depth estimation, visual correspondence, forensics detection, and multi-view reasoning</i>). However, we find these perception-demanding tasks cast significant challenges for current multimodal LLMs because they resist mediation through natural language. <b>BLINK</b> reformats 14 classic computer vision tasks into 3,978 multiple-choice questions, paired with single or multiple images and visual prompting. While humans get 95.100% accuracy on average, <b>BLINK</b> is surprisingly challenging for existing multimodal LLMs: even the best-performing GPT-4V and Gemini achieve accuracies of 51.32% and 45.46%, only 13.23% and 7.47% higher than random guessing, indicating that such perception abilities have not “emerged” yet in recent multimodal LLMs. Our analysis also highlights that specialist CV models could solve these problems much better, suggesting potential pathways for future improvements. We believe <b>BLINK</b> will stimulate the community to help multimodal LLMs catch up with human-level visual perception.
           </p>
         </div>
       </div>
@@ -252,15 +253,15 @@
 
 
 <!-- Paper Qualitative -->
-<section class="section hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-sixths">
         <h2 class="title is-3">Qualitative Results</h2>
         <img src="static/images/qual.png" width="100%"/>
-        <h2 class="content has-text-centered">
+        <!-- <h2 class="content has-text-centered">
           Qualitative results on <b>BLINK</b>. 
-        </h2>
+        </h2> -->
         <h2 class="content has-text-justified">
           For each task, we show the choice of LLaVAv1.6-34B, Qwen-VL-Max, Gemini Pro, GPT-4V, and humans. Red choice indicates the ground truth. Notice that the markers are intentionally enlarged for visualization purposes, and we make some images inset images to save space. For IQ test, the third image is constructed by overlaying the first and second images.
         </h2>
@@ -277,10 +278,10 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-sixths">
         <h2 class="title is-3">Quantitative Results</h2>
-        <img src="static/images/quan.png" height="100%"/>
+        <img src="static/images/quan.png" height="90%"/>
         <h2 class="content has-text-centered">
           Results of different models on the <b>BLINK</b> test set. The first row shows
-          task names and number of test data. The best performance in each task is in-bold.
+          task names and number of test data.
         </h2>
         <h2 class="content has-text-justified">
           The mean accuracy of 7B and 13B open-source Multimodal LLMs hover around <b>35–42%</b>, which is similar to <b>random guess (38.09%)</b>. The most proficient open-source model, LLaVA-v1.6-34B, achieves an accuracy of 46.4%. Even the most advanced models, GPT-4V and Gemini Pro, achieve accuracies of only 51.32% and 45.46% respectively. Their performance are merely 13.23% and 7.47% better than random guessing and lag behind human performance by 43.65% and 49.51%. Notably, for certain tasks such as jigsaw, semantic correspondence, multi-view reasoning, object localization, and relative reflectance, some multimodal LLMs even underperform compared to random guessing.
@@ -292,14 +293,15 @@
 
 
 <!-- Paper Analysis -->
-<section class="section hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <h2 class="title is-3">Experiment Analysis</h2> <br>
     </div>
     <div class="columns is-centered">
       <div class="column is-five-sixths">
-        <h2 class="title is-4">Is dense captioning all you need for a multimodal LLM benchmark?</h2>
+        <h2 class="title is-4">
+        1. Is dense captioning all you need for a multimodal LLM benchmark?
         <h2 class="content has-text-justified">
           To answer the question, we convert images into task-agnostic dense image captions with GPT-4V, and follow with a text-based LLM. The dense caption describes detailed information about the image and the visual prompts (e.g., where each circle is), using language. We experiment with <b>BLINK, MMBench</b> and <b>MMMU</b>. Surprisingly, we find that the Caption + LLM setting achieves better results on MMBench and MMMU then BLINK. These results indicate that image captions carry a large portion of visual information needed to answer other benchmarks. Meanwhile, <b>BLINK requires advanced perceptual abilities beyond what is currently attainable with general captions</b>.
         </h2>
@@ -309,7 +311,7 @@
           Caption+LLM achieves good results on MMBench and MMMU, but failes on <b>BLINK</b>.
         </h2>
         <br>
-        <h2 class="title is-4">Effect of visual prompting on BLINK</h2>
+        <h2 class="title is-4">2. Visual prompting can effect a lot on multimodal LLMs.</h2>
         <h2 class="content has-text-justified">
           We analyze the effect of circle sizes and colors on multiple tasks in BLINK. The experiments suggest that visual prompting can have a big impact on multimodal LLM performance, and improving visual prompts or improving model robustness to prompt variation is a promising direction for future research.
         </h2>
@@ -319,13 +321,13 @@
         </h2>
 
 
-        <h2 class="title is-4">Can specialist models solve Blink tasks? </h2>
+        <h2 class="title is-4">3. Can specialist models solve Blink tasks? </h2>
         <h2 class="content has-text-justified">
           Specialists can serve as a proxy upper bound of how good multimodal LLMs could be. This sheds light on the possibility that multimodal LLMs may progress on these tasks given the correct data and training strategy. 
         </h2>
         <img src="static/images/specialist.png" height="100%"/>
         <h2 class="content has-text-justified">
-          The specialists perform much better than GPT-4V and Gemini Pro, outperforming the best multimodal LLM by 18% to 57% on these tasks. 
+          The specialists perform much better than GPT-4V and Gemini Pro, outperforming multimodal LLMs by 18% to 57% on these tasks. 
         </h2>
       </div>
     </div>
@@ -351,7 +353,7 @@
           <div id="results-carousel" class="carousel results-carousel">
            <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide1.png" width="70%"/>
+            <img src="static/images/example/Slide1.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -359,7 +361,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide2.png" width="70%"/>
+            <img src="static/images/example/Slide2.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -367,7 +369,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide3.png" width="70%"/>
+            <img src="static/images/example/Slide3.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -375,7 +377,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide4.png" width="70%"/>
+            <img src="static/images/example/Slide4.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -383,7 +385,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide5.png" width="70%"/>
+            <img src="static/images/example/Slide5.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -391,7 +393,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide6.png" width="70%"/>
+            <img src="static/images/example/Slide6.png" width="100%"/>
             <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -399,7 +401,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide7.png" width="70%"/>
+            <img src="static/images/example/Slide7.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -407,7 +409,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide8.png" width="70%"/>
+            <img src="static/images/example/Slide8.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -415,7 +417,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide9.png" width="70%"/>
+            <img src="static/images/example/Slide9.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -423,7 +425,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide10.png" width="70%"/>
+            <img src="static/images/example/Slide10.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -431,7 +433,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide11.png" width="70%"/>
+            <img src="static/images/example/Slide11.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -439,7 +441,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide12.png" width="70%"/>
+            <img src="static/images/example/Slide12.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -447,7 +449,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide13.png" width="70%"/>
+            <img src="static/images/example/Slide13.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -455,7 +457,7 @@
     
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide14.png" width="70%"/>
+            <img src="static/images/example/Slide14.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
@@ -463,28 +465,28 @@
           
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide15.png" width="70%"/>
+            <img src="static/images/example/Slide15.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
           </div>
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide16.png" width="70%"/>
+            <img src="static/images/example/Slide16.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
           </div>
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide17.png" width="70%"/>
+            <img src="static/images/example/Slide17.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
           </div>
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/example/Slide18.png" width="70%"/>
+            <img src="static/images/example/Slide18.png" width="100%"/>
                         <!-- <h2 class="subtitle has-text-centered">
               Example case from <b>BLINK</b> and GPT-4V prediction.
             </h2> -->
