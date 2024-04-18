@@ -122,11 +122,11 @@
                     <span class="author-block">
                       <sup>1</sup>University of Pensylvania&emsp;
                       <sup>2</sup>University of Washington&emsp;
-                      <sup>3</sup>Allen Institute for AI&emsp;
+                      <sup>3</sup>Allen Institute for AI&emsp; <br>
                       <sup>4</sup>University of California, Davis&emsp;
                       <sup>5</sup>Columbia University&emsp;
                       <!-- <sup>6</sup>Cornell University&emsp; -->
-                      <sup>*</sup>Equal Contribution
+                      <sup>*</sup>Equal Contribution&emsp;
                       <sup>†</sup>Equal Advising
                     </span>
                     <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
@@ -267,7 +267,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce <b>BLINK</b>, a new benchmark for multimodal language models (LLMs) that focuses on core visual perception abilities not found in other evaluations. Most of the <b>BLINK</b> tasks can be solved by humans “within a blink” (e.g., <i>relative depth estimation, visual correspondence, forensics detection, and multi-view reasoning</i>). However, we find these perception-demanding tasks cast significant challenges for current multimodal LLMs because they resist mediation through natural language. <b>BLINK</b> reformats 14 classic computer vision tasks into 3,978 multiple-choice questions, paired with single or multiple images and visual prompting. While humans get 95.100% accuracy on average, <b>BLINK</b> is surprisingly challenging for existing multimodal LLMs: even the best-performing GPT-4V and Gemini achieve accuracies of 51.32% and 45.46%, only 13.23% and 7.47% higher than random guessing, indicating that such perception abilities have not “emerged” yet in recent multimodal LLMs. Our analysis also highlights that specialist CV models could solve these problems much better, suggesting potential pathways for future improvements. We believe <b>BLINK</b> will stimulate the community to help multimodal LLMs catch up with human-level visual perception.
+            We introduce <b>BLINK</b>, a new benchmark for multimodal language models (LLMs) that focuses on core visual perception abilities not found in other evaluations. Most of the <b>BLINK</b> tasks can be solved by humans “within a blink” (e.g., <i>relative depth estimation, visual correspondence, forensics detection, and multi-view reasoning</i>). However, we find these perception-demanding tasks cast significant challenges for current multimodal LLMs because they resist mediation through natural language. <b>BLINK</b> reformats 14 classic computer vision tasks into 3,807 multiple-choice questions, paired with single or multiple images and visual prompting. While humans get 95.70% accuracy on average, <b>BLINK</b> is surprisingly challenging for existing multimodal LLMs: even the best-performing GPT-4V and Gemini achieve accuracies of 51.26% and 45.72%, only 13.17% and 7.63% higher than random guessing, indicating that such perception abilities have not “emerged” yet in recent multimodal LLMs. Our analysis also highlights that specialist CV models could solve these problems much better, suggesting potential pathways for future improvements. We believe <b>BLINK</b> will stimulate the community to help multimodal LLMs catch up with human-level visual perception.
           </p>
         </div>
       </div>
@@ -310,7 +310,7 @@
           task names and number of test data.
         </h2>
         <h2 class="content has-text-justified">
-          The mean accuracy of 7B and 13B open-source Multimodal LLMs hover around <b>35–42%</b>, which is similar to <b>random guess (38.09%)</b>. The most proficient open-source model, LLaVA-v1.6-34B, achieves an accuracy of 46.4%. Even the most advanced models, GPT-4V and Gemini Pro, achieve accuracies of only 51.32% and 45.46% respectively. Their performance are merely 13.23% and 7.47% better than random guessing and lag behind human performance by 43.65% and 49.51%. Notably, for certain tasks such as jigsaw, semantic correspondence, multi-view reasoning, object localization, and relative reflectance, some multimodal LLMs even underperform compared to random guessing.
+          The mean accuracy of 7B and 13B open-source Multimodal LLMs hover around <b>35–42%</b>, which is similar to <b>random guess (38.09%)</b>. The most proficient open-source model, LLaVA-v1.6-34B, achieves an accuracy of 45.05%. Even the most advanced models, GPT-4V and Gemini Pro and Claude 3 OPUS, achieve accuracies of only 51.26%, 45.72%, and 44.11% respectively. Their performance are merely 13.17%, 7.63% and 6.02% better than random guessing and lag behind human performance by 44.44%, 49.98% and 51.59%. Notably, for certain tasks such as jigsaw, semantic correspondence, multi-view reasoning, object localization, and relative reflectance, some multimodal LLMs even underperform compared to random guessing.
         </h2>
       </div>
     </div>
