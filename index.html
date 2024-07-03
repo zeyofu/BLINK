@@ -34,6 +34,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/dataTables.bulma.css">
   <link rel="icon" href="./static/images/blink-removebg-preview.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -121,7 +122,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">BLINK<img src="static/images/blink-removebg-preview.png" width="80" />: Multimodal Large Language Models Can See but Not Perceive</h1>
+            <h1 class="title is-1 publication-title"><span class="rainbow_text_animated">BLINK </span><img src="static/images/blink-removebg-preview.png" width="80" />: Multimodal Large Language Models Can See but Not Perceive</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                 <span class="author-block">
@@ -166,6 +167,9 @@
                       <!-- <sup>6</sup>Cornell University&emsp; -->
                       <sup>*</sup>Equal Contribution&emsp;
                       <sup>†</sup>Equal Advising
+                    </span>
+                    <span class="author-block">
+                      <h1 class="title is-4"><font color="#B03A2E"><b>ECCV 2024</b></font></h1>
                     </span>
                     <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
@@ -245,7 +249,6 @@
         <br>
         Example tasks in <span style="font-weight:bold;">BLINK</span>. The answers of the examples: relative depth: B; jigsaw: A; multi-view reasoning: right; visual correspondence: A; semantic correspondence: C; forensics detection: final image; IQ test: D; visual similarity: upper one; functional correspondence: A; relative reflectance: they are about the same.
       </h2>
-      
     </div>
   </div>
 </section>
@@ -267,6 +270,32 @@
   </div>
 </section> -->
 <!-- End teaser video -->
+
+<!-- Leaderboard -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3" id="leaderboard">
+        <span class="fancy_text_color">
+        Leaderboard
+      </span>
+      </h2>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <div class="has-text-centered">
+        <p>
+          We provide a leaderboard on the <b>validation</b> set for the community to track progress. All models are evaluated in a zero-shot setting using promts provided in the dataset.
+        </p>
+          <div id="table-container"></div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
 
 <!-- BLINK Comparison -->
 <section class="section hero is-light">
@@ -524,14 +553,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
+      <pre><bibtexcode>
         @article{fu2024blink,
           title={BLINK: Multimodal Large Language Models Can See but Not Perceive},
           author={Fu, Xingyu and Hu, Yushi and Li, Bangzheng and Feng, Yu and Wang, Haoyu and Lin, Xudong and Roth, Dan and Smith, Noah A and Ma, Wei-Chiu and Krishna, Ranjay},
           journal={arXiv preprint arXiv:2404.12390},
           year={2024}
         }
-      </code></pre>
+      </bibtexcode></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -560,5 +589,30 @@
 
     <!-- End of Statcounter Code -->
 
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    <script src="./static/js/jquery.csv.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bulma.min.js"></script>
+    <script src="./static/js/csv_to_html_table.js"></script>
+    <script>
+      CsvToHtmlTable.init({
+        csv_path: 'static/val_result.csv', 
+        element: 'table-container', 
+        allow_download: true,
+        csv_options: {separator: ',', delimiter: '"'},
+        datatables_options: {
+          "paging": false, 
+          "order": [[1, 'desc']],
+          "columnDefs": [
+          {targets: [0], className: 'dt-left', className: 'dt-head-left'},
+          ]
+        }
+      });
+    </script>
+  
   </body>
   </html>
