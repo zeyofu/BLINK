@@ -28,26 +28,29 @@ CsvToHtmlTable = {
 
 
                 var $tableHeadRow2 = $("<tr></tr>");
+                // Model,Overall,Visual Similarity,Counting,Relative Depth,
+                // Jigsaw,Art Style,Functional Correspondence,Semantic Correspondence,Spatial Relation,
+                // Object Localization,Visual Correspondence,Multi-view Reasoning,Relative Reflectance,Forensic Detection,IQ Test
                 const explanations = ["The name of the model", 
                 "Overall score for all tasks", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task", 
-                "Score for specific task"];
+                "Score for Visual Similarity task", 
+                "Score for Counting task", 
+                "Score for Relative Depth task", 
+                "Score for Jigsaw task", 
+                "Score for Art Style task", 
+                "Score for Functional Correspondence task", 
+                "Score for Semantic Correspondence task", 
+                "Score for Spatial Relation task", 
+                "Score for Object Localization task", 
+                "Score for Visual Correspondence task", 
+                "Score for Multi-view Reasoning task", 
+                "Score for Relative Reflectance task", 
+                "Score for Forensic Detection task", 
+                "Score for IQ Test task"];
                 for (var headerIdx = 0; headerIdx < csvHeaderRow.length; headerIdx++) {
                     var explanation = explanations[headerIdx];
                     $tableHeadRow2Cell = $("<th class='tooltip'></th>").text(csvHeaderRow[headerIdx]);
-                    // $tableHeadRow2Cell.append($("<span class='tooltiptext'></span>").text(explanation));
+                    $tableHeadRow2Cell.append($("<span class='tooltiptext'></span>").text(explanation));
                     $tableHeadRow2.append($tableHeadRow2Cell);
                 }
                 $tableHeadRow2.css("background-color", "#f5f5f5");

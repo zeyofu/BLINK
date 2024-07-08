@@ -1,4 +1,4 @@
-Model,Overall,Visual Similarity,Counting,Relative Depth,Jigsaw,Art Style,Functional Correspondence,Semantic Correspondence,Spatial Relation,Object Localization,Visual Correspondence,Multi-view Reasoning,Relative Reflectance,Forensic Detection,IQ Test
+Model,Overall,Similarity,Counting,Depth,Jigsaw,Art,Fun.Corr.,Sem.Corr.,Spatial,Local.,Vis.Corr.,Multi-view,Reflect.,Forensic,IQ
 Human,95.67,96.70,93.75,99.19,99.00,95.30,80.77,96.07,98.25,98.00,99.42,92.48,95.14,100.00,80.00
 Random Choice,38.09,50,25,50,50,50,25,25,50,50,25,50,33.33,25,25
 GPT-4o,60.04,72.59,49.17,74.19,55.33,82.91,40.77,53.96,69.23,59.84,75.00,59.40,37.31,79.55,31.33
